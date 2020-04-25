@@ -1,15 +1,16 @@
 {
-  "name": "07-restserver",
-  "version": "1.0.0",
-  "description": "- Instalación y pruebas con MongoDB\r - Peticiones HTTP\r     - Get\r     - Put\r     - Post\r     - Delete\r - Aprender sobre códigos de error HTTP\r - Códigos de error en Express\r - Archivos para la configuración global",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
-  }
+    "name": "07-restserver",
+    "version": "1.0.0",
+    "description": "- Instalación y pruebas con MongoDB\r - Peticiones HTTP\r     - Get\r     - Put\r     - Post\r     - Delete\r - Aprender sobre códigos de error HTTP\r - Códigos de error en Express\r - Archivos para la configuración global",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1"
+    }
 }
