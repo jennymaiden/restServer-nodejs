@@ -1,5 +1,9 @@
 require('./config/config')
 const express = require('express')
+const mongoose = require('mongoose');
+const colors = require('colors');
+
+
 const app = express();
 
 const bodyParser = require('body-parser')
@@ -7,43 +11,30 @@ const bodyParser = require('body-parser')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
+    //Parse application json
 app.use(bodyParser.json())
 
+// Importar el Archivo de routes de usuario
+app.use(require('./routes/usuario'));
 
-app.get('/usuario', function(req, res) {
-    res.json('get usuario')
+
+
+mongoose.connect(process.env.URLDB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+}, (err, resp) => {
+
+    if (err) throw err;
+    console.log('Base de datos ONLINE'.green);
 });
+// mongoose.connect('mongodb://localhost:27017/cafe', (err, resp) => {
+//     if (err) throw err;
 
-app.post('/usuario', function(req, res) {
-
-    let body = req.body;
-
-    if (body.nombre === undefined) {
-        res.status(400).json({
-            ok: false,
-            mensaje: 'El nombre es necesario'
-        });
-    } else {
-        res.json({
-            body
-        })
-    }
-
-});
+//     console.log('Base de datos ONLINE');
+// });
 
 
-app.put('/usuario/:id', function(req, res) {
-
-    let pId = req.params.id;
-    res.json({
-        id: pId
-    })
-});
-
-app.delete('/usuario', function(req, res) {
-    res.json('delete usuario')
-});
 app.listen(process.env.PORT, () => {
     console.log('Escuchando puerto', process.env.PORT);
 })
