@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
     //Parse application json
 app.use(bodyParser.json())
 
-// Importar el Archivo de routes de usuario
-app.use(require('./routes/usuario'));
+// Configuracion global de rutas
+app.use(require('./routes/index'));
 
 
 

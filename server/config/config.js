@@ -21,3 +21,17 @@ if (process.env.NODE_ENV === 'dev') {
 }
 
 process.env.URLDB = urlDB;
+
+/**
+ * Fecha de expiracion del token
+ * 60 Segundos
+ * 60 minutos
+ * 24 horas
+ * 30 días
+ */
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+/***
+ * SEDD de autenticacion
+ */
+process.env.SEDD = process.env.SEDD || 'mi-llave-secreta-desarrollo';
