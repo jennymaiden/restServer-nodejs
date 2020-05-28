@@ -35,3 +35,9 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
  * SEDD de autenticacion
  */
 process.env.SEDD = process.env.SEDD || 'mi-llave-secreta-desarrollo';
+
+
+/**
+ * ID CLIENT GOOGLE
+ */
+process.env.CLIENT_ID = process.env.CLIENT_ID || '407946141794-s813a4v5r62ca6pamv4qslbkv1be78nc.apps.googleusercontent.com';
