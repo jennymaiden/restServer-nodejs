@@ -74,7 +74,6 @@ async function verify(token) {
     console.log(payload.name);
     console.log(payload.email);
     console.log(payload.picture);
-    console.log(token);
     return ({
         nombre: payload.name,
         email: payload.email,
